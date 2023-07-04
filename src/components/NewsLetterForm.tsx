@@ -2,19 +2,17 @@ import { Box, Typography, TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
 import DoneIcon from "@mui/icons-material/Done";
-import { useContext } from "react";
-import UserFormContext from "../context/UserFormContext";
+import { get, useFormContext } from "react-hook-form";
 
 const NewsLetterForm = () => {
   const { t } = useTranslation();
-  const context = useContext(UserFormContext);
-  if (!context || !context.register || !context.setValue)
-    throw new Error("UserFormContext or register is undefined");
   const {
+    formState: { errors },
     register,
     setValue,
-    errors: { newLetterSubscriptionEmail },
-  } = context;
+  } = useFormContext();
+
+  const error = get(errors, "newLetterSubscriptionEmail");
   const handleSubmit = () => {
     setValue("subscribedToNewsLetter", true);
   };
@@ -28,8 +26,8 @@ const NewsLetterForm = () => {
           {...register("newLetterSubscriptionEmail")}
           id="newLetterSubscriptionEmail"
           label={t("formArea.information.news_letter_input_content")}
-          error={Boolean(newLetterSubscriptionEmail)}
-          helperText={newLetterSubscriptionEmail?.message}
+          error={Boolean(error)}
+          helperText={error?.message}
           variant="standard"
           sx={{ width: "16rem", height: "4rem" }}
         />

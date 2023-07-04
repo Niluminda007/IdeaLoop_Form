@@ -1,7 +1,6 @@
 import Checkbox from "@mui/material/Checkbox";
 import { Box, Typography } from "@mui/material";
-import { useContext } from "react";
-import UserFormContext from "../context/UserFormContext";
+import { useFormContext } from "react-hook-form";
 import CustomErrorMessage from "./CustomErrorMessage";
 
 type CheckBoxComponentProps = {
@@ -15,11 +14,7 @@ const CheckBoxComponent = ({
   conent,
   error,
 }: CheckBoxComponentProps) => {
-  const context = useContext(UserFormContext);
-  if (!context || !context.register) {
-    throw new Error("UserFormContext or register is undefined");
-  }
-  const { register } = context;
+  const { register } = useFormContext();
   return (
     <>
       <Box display="flex" alignItems="center">

@@ -3,21 +3,16 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { countries } from "../constants/countries";
 import { useTranslation } from "react-i18next";
-import { useContext } from "react";
-import UserFormContext from "../context/UserFormContext";
-import { FieldError } from "react-hook-form";
+import { get, useFormContext } from "react-hook-form";
 
-type CountryDropdownInputProps = {
-  error: FieldError | undefined;
-};
-
-const CountryDropdownInput = ({ error }: CountryDropdownInputProps) => {
+const CountryDropdownInput = () => {
   const { t } = useTranslation();
-  const context = useContext(UserFormContext);
-  if (!context || !context.register) {
-    throw new Error("UserFormContext or register is undefined");
-  }
-  const { register } = context;
+
+  const {
+    formState: { errors },
+    register,
+  } = useFormContext();
+  const error = get(errors, "country");
   return (
     <Autocomplete
       id="country"

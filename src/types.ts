@@ -22,7 +22,7 @@ export interface UserInput {
   email: string;
   linkdein: string;
   idea: string;
-  additionalFile: File | undefined;
+  additionalFile: File | null;
   subscribedToNewsLetter: boolean;
   newLetterSubscriptionEmail: string;
   promotionalCommunication: boolean;

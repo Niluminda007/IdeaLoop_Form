@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import UploadIcon from "../assets/upload.png";
-import { useContext, useRef, useState } from "react";
-import UserFormContext from "../context/UserFormContext";
+import { useRef, useState } from "react";
+import { useFormContext } from "react-hook-form";
 import CustomErrorMessage from "./CustomErrorMessage";
 
 const FileUploadInput = () => {
@@ -10,11 +10,7 @@ const FileUploadInput = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [fileExceeded, setFileExceeded] = useState<boolean>(false);
-  const context = useContext(UserFormContext);
-  if (!context || !context.setValue) {
-    throw new Error("UserFormContext or register is undefined");
-  }
-  const { setValue } = context;
+  const { setValue } = useFormContext();
 
   const handleFileUpload = () => {
     if (fileInputRef.current && fileInputRef.current.files) {

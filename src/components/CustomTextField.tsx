@@ -1,39 +1,36 @@
 import TextField from "@mui/material/TextField";
-import { useContext } from "react";
-import UserFormContext from "../context/UserFormContext";
-import { FieldError } from "react-hook-form";
+import { get, useFormContext } from "react-hook-form";
 
 type CustomTextFieldProps = {
-  id: "companyName" | "name" | "phoneNumber" | "email" | "linkdein" | "idea";
+  name: "companyName" | "name" | "phoneNumber" | "email" | "linkdein" | "idea";
   label: string;
-  error: FieldError | undefined;
 };
 
-const CustomTextField = ({ id, label, error }: CustomTextFieldProps) => {
-  const context = useContext(UserFormContext);
-  if (!context || !context.register) {
-    throw new Error("UserFormContext or register is undefined");
-  }
-  const { register } = context;
+const CustomTextField = ({ name, label }: CustomTextFieldProps) => {
+  const {
+    formState: { errors },
+    register,
+  } = useFormContext();
+
+  const error = get(errors, name);
+
   return (
-    <>
-      <TextField
-        {...register(id)}
-        autoComplete="off"
-        id={id}
-        label={label}
-        variant="standard"
-        error={Boolean(error)}
-        helperText={error?.message}
-        sx={{
-          width: "550px",
-          height: "40px",
-          "@media (max-width: 600px)": {
-            width: "100%",
-          },
-        }}
-      />
-    </>
+    <TextField
+      {...register(name)}
+      autoComplete="off"
+      id={name}
+      label={label}
+      variant="standard"
+      error={Boolean(error)}
+      helperText={error?.message}
+      sx={{
+        width: "550px",
+        height: "40px",
+        "@media (max-width: 600px)": {
+          width: "100%",
+        },
+      }}
+    />
   );
 };
 

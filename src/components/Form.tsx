@@ -1,19 +1,17 @@
 import { Box } from "@mui/material";
 import FormInputSection from "./FormInputSection";
 import FormInformationSection from "./FormInformationSection";
-import UserFormContext from "../context/UserFormContext";
-import { useContext } from "react";
+import { useFormContext } from "react-hook-form";
 import { UserInput } from "../types";
 
 const Form = () => {
-  const context = useContext(UserFormContext);
-  if (!context || !context.handleSubmit)
-    throw new Error("UserFormContext or register is undefined");
-  const { handleSubmit } = context;
+  const { handleSubmit, reset } = useFormContext<UserInput>();
+
   const onValid = (data: UserInput) => {
     const jsonPayload = JSON.stringify(data, null, 2);
     alert(jsonPayload);
     console.log(data);
+    reset();
     window.location.reload();
   };
   return (
