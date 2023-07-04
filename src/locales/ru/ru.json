@@ -1,0 +1,44 @@
+{
+  "header": {
+    "navLinks": {
+      "Solutions": "Решения",
+      "Company": "Компания",
+      "Pricing": "Цены",
+      "Resources": "Цены"
+    },
+    "login_link_content": "Авторизоваться",
+    "start_now_button_content": "Начать сейчас"
+  },
+  "formArea": {
+    "heading": "Свяжитесь c нами",
+    "content": "He стесняйтесь писать нам сообщение. Вопросы, предложения, запросы приветствуются и приветствуются",
+    "inputs": {
+      "company": "Название вашей компании",
+      "country": "Страна",
+      "name": "Контактное имя",
+      "phone": "Контактный телефон",
+      "email": "Контактный Email",
+      "linkedin": "Linkedin",
+      "idea": "Давайте поговорим  o вашей идее",
+      "upload_text": "Загрузить дополнительный файл",
+      "upload_limit_text": "Прикрепите файл. Размер файлов не должен превышать 10 МБ."
+    },
+    "information": {
+      "legal_info": "Юридическая информация",
+      "company_title": "Название компании",
+      "company_name": "SIA ABC Mobile IT",
+      "registration_title": "Регистрационный номер",
+      "registration_number": "42403048816",
+      "address_title": "Адрес",
+      "address": "Elizabetes iela 8-7A, Рига, Латвия, LV-1010",
+      "quick_info_title": "Для быстрых вопросов",
+      "quick_info_email": "hello@idealoop.io",
+      "news_letter_title": "Хотите подписаться на нашу рассылку?",
+      "news_letter_input_content": "Электронная почта"
+    },
+    "inputs_radio": {
+      "promotional": "Я хочу получать рекламные сообщения",
+      "terms_and_conditions": "Я согласен c условиями использования"
+    }
+  }
+}

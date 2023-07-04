@@ -1,0 +1,45 @@
+{
+  "header": {
+    "navLinks": {
+      "Solutions": "Lösungen",
+      "Company": "Unternehmen",
+      "Pricing": "Preise",
+      "Resources": "Ressourcen"
+    },
+    "login_link_content": "Anmeldung",
+    "start_now_button_content": "Jetzt anfangen"
+  },
+  "formArea": {
+    "heading": "Kontaktieren Sie uns",
+    "content": "Fühlen Sie sich frei, uns eine Nachricht zu hinterlassen. Fragen, Vorschläge und Anfragen sind erwünscht und willkommen",
+    "inputs": {
+      "company": "Ihr Firmenname",
+      "country": "Land",
+      "name": "Kontaktname",
+      "phone": "Kontakttelefon",
+      "email": "Kontakt-E-Mail",
+      "linkedin": "Linkedin",
+      "idea": "Lassen Sie uns über Ihre Idee sprechen",
+      "upload_text": "Zusätzliches Dokument hochladen",
+      "upload_limit_text": "Datei anhängen. Die Dateigröße Ihrer Dokumente darf 10 MB nicht überschreiten."
+    },
+    "information": {
+      "legal_info": "Impressum",
+      "company_title": "Firmenname",
+      "company_name": "SIA ABC Mobile IT",
+      "registration_title": "Registrierungsnummer",
+      "registration_number": "42403048816",
+      "address_title": "Adresse",
+      "address": "Elizabetes iela 8-7A, Riga, Lettland, LV-1010",
+      "quick_info_title": "Für schnelle Anfragen",
+      "quick_info_email": "hello@idealoop.io",
+      "news_letter_title": "Möchten Sie unseren Newsletter abonnieren?",
+      "news_letter_input_content": "E-Mail"
+    },
+    "inputs_radio": {
+      "promotional": "Ich möchte Werbeinformationen erhalten",
+      "terms_and_conditions": "Ich stimme den Geschäftsbedingungen zu"
+    },
+    "input_submit_text": "SENDEN"
+  }
+}
